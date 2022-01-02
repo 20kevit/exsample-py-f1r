@@ -5,8 +5,8 @@ def error_log(error:str, function:str):
     Time = f"[{ctime()}]"
     open("f1r.log", "a+").write(f"{Time} - {function} - {error}\n")
 
-def create_link(link:str, name="rand"):
-    url = f"https://f1r.ir/api/v1/?url={link}&name={name}"
+def create_link(link:str, name="rand", token):
+    url = f"https://f1r.ir/api/v1/?url={link}&name={name}&token={token}"
     try:
         response = get(url).json()
     except Exception as error:
